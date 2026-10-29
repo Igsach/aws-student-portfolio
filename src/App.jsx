@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
   Terminal, Cpu, Cloud, Code, Zap, Sparkles, 
-  X, ChevronRight, Award, Layers, MonitorSmartphone, Rocket
+  X, ChevronRight, Award, Layers, MonitorSmartphone, Rocket, Wand2, Linkedin
 } from 'lucide-react';
 
 export default function App() {
@@ -25,28 +25,28 @@ export default function App() {
     {
       code: 'A1',
       name: '2 AM Hackathon Hyperfocus',
-      icon: '⚡',
+      icon: <Zap className="w-8 h-8 text-amber-400 mx-auto" />,
       desc: 'When the clock hits 2 AM during a hackathon, my debugging speed triples. I turn complex blockers into working MVPs before sunrise.',
       badge: 'Legendary Trait'
     },
     {
       code: 'B2',
       name: 'Zero-Downtime Cloud Architect',
-      icon: '☁️',
+      icon: <Cloud className="w-8 h-8 text-purple-400 mx-auto" />,
       desc: 'From configuring custom domain DNS records to setting up automated GitHub CI/CD pipelines on AWS Amplify—I ship globally in minutes.',
       badge: 'AWS Builder Power'
     },
     {
       code: 'C3',
       name: 'Full-Stack Shapeshifter',
-      icon: '🔮',
+      icon: <Wand2 className="w-8 h-8 text-pink-400 mx-auto" />,
       desc: 'Capable of switching seamlessly between pixel-perfect Tailwind UIs, React logic, and structured technical documentation.',
       badge: 'Epic Versatility'
     },
     {
       code: 'D4',
       name: 'Startup Hustler (CreaSpace)',
-      icon: '🚀',
+      icon: <Rocket className="w-8 h-8 text-rose-400 mx-auto" />,
       desc: 'Founder mindset. I don\'t just write code; I build products that solve real problems and understand the business side of tech.',
       badge: 'Secret Weapon'
     }
@@ -77,11 +77,11 @@ export default function App() {
     } else if (cmd === 'projects') {
       newHistory.push({ type: 'output', text: '1. CreaSpace.in (Startup) | 2. AWS Cloud Portfolio | 3. Campusify EdTech | 4. AI Hackathon Prototypes' });
     } else if (cmd === 'startup') {
-      newHistory.push({ type: 'output', text: '🚀 CreaSpace.in: My own startup! Building digital experiences and scalable platforms.' });
+      newHistory.push({ type: 'output', text: '[CREASPACE]: My own startup! Building digital experiences and scalable platforms.' });
     } else if (cmd === 'aws') {
       newHistory.push({ type: 'output', text: 'AWS Architecture: Hosted globally on AWS Amplify with continuous deployment connected directly to GitHub.' });
     } else if (cmd === 'secret') {
-      newHistory.push({ type: 'output', text: '🔓 SECRET UNLOCKED: Launching the Superpower Vending Machine...' });
+      newHistory.push({ type: 'output', text: '[SECRET UNLOCKED]: Launching the Superpower Vending Machine...' });
       setVendingOpen(true);
     } else if (cmd === 'clear') {
       setTerminalHistory([]);
@@ -96,7 +96,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-purple-500 selection:text-white">
+    <div className="w-full min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-purple-500 selection:text-white overflow-x-hidden">
       
       {/* Top Banner */}
       <div className="bg-gradient-to-r from-purple-900/90 via-indigo-900/90 to-purple-900/90 border-b border-purple-500/30 px-4 py-2.5 text-center text-xs md:text-sm flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2">
@@ -148,7 +148,7 @@ export default function App() {
           <p className="text-slate-400 text-base md:text-lg leading-relaxed mb-8">
             Hi, I'm <strong>Sachin (Sach)</strong> — Founder of <strong>CreaSpace.in</strong>, web developer, and cloud enthusiast. I specialize in turning ambitious ideas into fast, responsive applications on modern AWS infrastructure.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4">
             <a href="#projects" className="bg-purple-600 hover:bg-purple-500 text-white font-semibold px-6 py-3.5 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-purple-600/25">
               View My Projects <ChevronRight className="w-4 h-4" />
             </a>
@@ -158,6 +158,14 @@ export default function App() {
             >
               <Sparkles className="w-4 h-4 text-amber-400" /> Launch Vending Machine
             </button>
+            <a 
+              href="https://in.linkedin.com/in/sachindhageofficial" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20 border border-[#0A66C2]/30 text-[#70B5F9] font-semibold px-6 py-3.5 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-[#0A66C2]/10"
+            >
+              <Linkedin className="w-5 h-5" /> Connect
+            </a>
           </div>
         </div>
 
@@ -254,13 +262,19 @@ export default function App() {
         </div>
         <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left">Projects & Achievements</h2>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
           {[
             {
               title: 'CreaSpace.in (My Startup)',
               badge: 'Startup Founder',
               desc: 'Founded a digital platform focusing on creative tech solutions. Architected the front-end and managed end-to-end deployment.',
               tech: ['Startup', 'React', 'Management', 'AWS']
+            },
+            {
+              title: 'Campusify EdTech Platform',
+              badge: 'Ex Co-Founder',
+              desc: 'Co-founded and built an educational technology platform dedicated to student learning, agile workflows, and tech mastery.',
+              tech: ['EdTech', 'Leadership', 'Product Strategy', 'Web']
             },
             {
               title: 'Sach.os AWS Portfolio',
@@ -381,8 +395,12 @@ export default function App() {
         <p>
           Built by <strong>Sachin (Sach)</strong> for the <strong>AWS Student Builder Challenge</strong>.
         </p>
-        <p className="mt-1">
-          Powered by React, Tailwind CSS & <strong className="text-purple-400/80">AWS Amplify</strong>.
+        <p className="mt-3 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <span>Powered by React, Tailwind CSS & <strong className="text-purple-400/80">AWS Amplify</strong>.</span>
+          <span className="hidden sm:inline w-1 h-1 rounded-full bg-slate-700"></span>
+          <a href="https://in.linkedin.com/in/sachindhageofficial" target="_blank" rel="noopener noreferrer" className="text-[#70B5F9] hover:underline flex items-center gap-1.5">
+            <Linkedin className="w-3.5 h-3.5" /> LinkedIn Profile
+          </a>
         </p>
       </footer>
 

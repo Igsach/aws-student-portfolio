@@ -1,6 +1,6 @@
 ⚡ Sach.os - Interactive Cloud Portfolio
 
-Live Demo: [Insert your AWS Amplify Link Here - e.g., https://main.d12345.amplifyapp.com]
+Live Demo: https://main.d3fettqy1vxhaw.amplifyapp.com/
 
 🚀 About the Project
 

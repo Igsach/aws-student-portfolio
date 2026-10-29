@@ -401,8 +401,17 @@ export default function App() {
         </p>
       </footer>
 
-      {/* CSS for custom scrollbar hidden in regular view but styled */}
+      {/* CSS overrides to fix grey space on sides and custom scrollbar */}
       <style dangerouslySetInnerHTML={{__html: `
+        /* Override default React/Vite constraints to ensure full width */
+        body, html, #root {
+          margin: 0 !important;
+          padding: 0 !important;
+          max-width: 100% !important;
+          width: 100% !important;
+          background-color: #020617 !important; /* Force dark background */
+        }
+        
         .custom-scrollbar::-webkit-scrollbar {
           width: 4px;
         }

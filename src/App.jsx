@@ -1,8 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  Terminal, Cpu, Cloud, Code, Zap, Sparkles, 
-  X, ChevronRight, Award, Layers, MonitorSmartphone, Rocket, Wand2, Linkedin
-} from 'lucide-react';
+import { Terminal, Cpu, Cloud, Code, Zap, Sparkles, X, ChevronRight, Award, Layers, MonitorSmartphone, Rocket, Wand2, Linkedin } from 'lucide-react';
 
 export default function App() {
   const [vendingOpen, setVendingOpen] = useState(false);
